@@ -1,4 +1,5 @@
 import { Component } from "react";
+import uniqid from "uniqid";
 import Preview from "./components/Preview";
 
 class App extends Component {
@@ -6,48 +7,142 @@ class App extends Component {
     super();
 
     this.state = {
-      name: "",
-      email: "",
-      phoneNumber: "",
-      title: "",
-      aboutMe: "",
-      address: "",
+      personalInformation: {
+        name: "",
+        title: "",
+        email: "",
+        phoneNumber: "",
+        address: "",
+        birthDate: "",
+        aboutMe: "",
+      },
+
+      experience: {
+        position: "",
+        company: "",
+        place: "",
+        from: "",
+        to: "",
+        id: uniqid(),
+      },
+      experiences: [],
+
+      education: {
+        school: "",
+        place: "",
+        subject: "",
+        from: "",
+        to: "",
+        id: uniqid(),
+      },
+      educations: [],
     };
   }
 
   // Handle changes in input fields
   handleChangeName(e) {
-    this.setState({ ...this.state, name: e.target.value });
-  }
-
-  handleChangeEmail(e) {
-    this.setState({ ...this.state, email: e.target.value });
-  }
-
-  handleChangePhoneNumber(e) {
-    this.setState({ ...this.state, phoneNumber: e.target.value });
+    this.setState({
+      ...this.state,
+      personalInformation: {
+        ...this.state.personalInformation,
+        name: e.target.value,
+      },
+    });
   }
 
   handleChangeTitle(e) {
-    this.setState({ ...this.state, title: e.target.value });
+    this.setState({
+      ...this.state,
+      personalInformation: {
+        ...this.state.personalInformation,
+        title: e.target.value,
+      },
+    });
   }
 
-  handleChangeAboutMe(e) {
-    this.setState({ ...this.state, aboutMe: e.target.value });
+  handleChangeEmail(e) {
+    this.setState({
+      ...this.state,
+      personalInformation: {
+        ...this.state.personalInformation,
+        email: e.target.value,
+      },
+    });
+  }
+
+  handleChangePhoneNumber(e) {
+    this.setState({
+      ...this.state,
+      personalInformation: {
+        ...this.state.personalInformation,
+        phoneNumber: e.target.value,
+      },
+    });
   }
 
   handleChangeAddress(e) {
-    this.setState({ ...this.state, address: e.target.value });
+    this.setState({
+      ...this.state,
+      personalInformation: {
+        ...this.state.personalInformation,
+        address: e.target.value,
+      },
+    });
+  }
+
+  handleChangeBirthDate(e) {
+    this.setState({
+      ...this.state,
+      personalInformation: {
+        ...this.state.personalInformation,
+        birthDate: e.target.value,
+      },
+    });
+  }
+
+  handleChangeAboutMe(e) {
+    this.setState({
+      ...this.state,
+      personalInformation: {
+        ...this.state.personalInformation,
+        aboutMe: e.target.value,
+      },
+    });
+  }
+
+  // Handle changes in experience input fields
+  handleExperienceChangePosition(e) {
+    this.setState({
+      ...this.state,
+      experience: {
+        ...this.state.experience,
+        position: e.target.value,
+      },
+    });
   }
 
   // Submit
-  handleSubmit(e) {
+  handleSubmitExperience(e) {
     e.preventDefault();
-    this.setState({ name: "", email: "", phoneNumber: "" });
+    this.setState({
+      ...this.state,
+      experiences: this.state.experiences.concat(this.state.experience),
+      experience: {
+        position: "",
+        company: "",
+        place: "",
+        from: "",
+        to: "",
+        id: uniqid(),
+      },
+    });
+    console.log(this.state);
   }
 
   render() {
-    const { name, email, phoneNumber, title, aboutMe, address } = this.state;
+    const { experience } = this.state;
+    const { name, title, email, phoneNumber, address, birthDate, aboutMe } =
+      this.state.personalInformation;
     return (
       <>
         <h1 className="logo">Forhåndsvisning</h1>
@@ -72,14 +167,6 @@ class App extends Component {
                 onChange={(e) => this.handleChangeTitle(e)}
               />
 
-              {/* Adresse */}
-              <input
-                value={address}
-                placeholder="Adresse"
-                type="text"
-                onChange={(e) => this.handleChangeAddress(e)}
-              />
-
               {/* E-post */}
               <input
                 value={email}
@@ -96,6 +183,22 @@ class App extends Component {
                 onChange={(e) => this.handleChangePhoneNumber(e)}
               />
 
+              {/* Adresse */}
+              <input
+                value={address}
+                placeholder="Adresse"
+                type="text"
+                onChange={(e) => this.handleChangeAddress(e)}
+              />
+
+              {/* Fødselsdato */}
+              <input
+                value={birthDate}
+                placeholder="Fødelsdato"
+                type="text"
+                onChange={(e) => this.handleChangeBirthDate(e)}
+              />
+
               {/* Om meg */}
               <input
                 value={aboutMe}
@@ -106,19 +209,25 @@ class App extends Component {
             </div>
 
             <h2>Erfaring</h2>
-            <form onSubmit={(e) => this.handleSubmit(e)}>
+            <form onSubmit={(e) => this.handleSubmitExperience(e)}>
+              <input
+                value={experience.position}
+                placeholder="Stilling"
+                type="text"
+                onChange={(e) => this.handleExperienceChangePosition(e)}
+              />
               <button type="submit">Legg til</button>
               <button>Fjern</button>
             </form>
 
             <h2>Utdannelse</h2>
-            <form onSubmit={(e) => this.handleSubmit(e)}>
+            <form>
               <button type="submit">Legg til</button>
               <button>Fjern</button>
             </form>
 
             <h2>Kunnskap</h2>
-            <form onSubmit={(e) => this.handleSubmit(e)}>
+            <form>
               <button type="submit">Legg til</button>
               <button>Fjern</button>
             </form>

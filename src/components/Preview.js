@@ -2,13 +2,9 @@ import { Component } from "react";
 import "../styles/preview.css";
 
 class Preview extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
-    const { name, title, email, address, phoneNumber, aboutMe } =
-      this.props.information;
+    const { name, title, email, phoneNumber, address, birthDate, aboutMe } =
+      this.props.information.personalInformation;
     return (
       <div className="preview">
         <div className="header">
@@ -24,14 +20,17 @@ class Preview extends Component {
         <div className="personal-details">
           <h2>Personlige Detaljer</h2>
 
+          <h3>E-post</h3>
+          <p>{email}</p>
+
+          <h3>Telefon</h3>
+          <p>{phoneNumber}</p>
+
           <h3>Adresse</h3>
           <p>{address}</p>
 
-          <h3>Telefonnummer</h3>
-          <p>{phoneNumber}</p>
-
-          <h3>Email</h3>
-          <p>{email}</p>
+          <h3>Fødselsdato</h3>
+          <p>{birthDate}</p>
         </div>
       </div>
     );
