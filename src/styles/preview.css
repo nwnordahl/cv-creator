@@ -1,0 +1,12 @@
+.preview {
+  background: white;
+  margin: 0 100px 40px 100px;
+  width: calc(85vh * 210 / 297);
+  height: 85vh;
+  /* height: 1131.4px; */
+  padding: 20px 50px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.preview {
+}
