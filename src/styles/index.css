@@ -25,25 +25,40 @@ body {
 .form {
   height: 85vh;
   border-radius: 8px;
-  padding: 20px;
+  padding: 20px 50px;
   background-color: white;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 15px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px 0px;
 }
 
-.form .personal-information {
+.form .personal-information,
+.form .experience,
+.form .education,
+.form .knowledge {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
-.form .personal-information input {
+.form .personal-information input,
+.form .experience input,
+.form .education input,
+.form .knowledge input {
   font-size: 20px;
   border: 0;
+  border-radius: 5px;
+  background-color: rgb(219, 219, 219);
+  text-align: center;
+  margin-bottom: 3px;
 }
 
-.form .personal-information input:focus {
+.form .personal-information input:focus,
+.form .experience input:focus,
+.form .education input:focus,
+.form .knowledge input:focus {
   outline: none;
 }
 

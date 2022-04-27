@@ -344,8 +344,11 @@ class App extends Component {
               />
             </div>
 
-            <h2>Erfaring</h2>
-            <form onSubmit={(e) => this.handleSubmitExperience(e)}>
+            <form
+              className="experience"
+              onSubmit={(e) => this.handleSubmitExperience(e)}
+            >
+              <h2>Erfaring</h2>
               <input
                 value={experience.position}
                 placeholder="Stilling"
@@ -384,8 +387,11 @@ class App extends Component {
               <button type="submit">Legg til</button>
             </form>
 
-            <h2>Utdannelse</h2>
-            <form onSubmit={(e) => this.handleSubmitEducation(e)}>
+            <form
+              className="education"
+              onSubmit={(e) => this.handleSubmitEducation(e)}
+            >
+              <h2>Utdannelse</h2>
               <input
                 value={education.school}
                 placeholder="Skole"
@@ -424,8 +430,11 @@ class App extends Component {
               <button type="submit">Legg til</button>
             </form>
 
-            <h2>Kunnskap</h2>
-            <form onSubmit={(e) => this.handleSubmitKnowledge(e)}>
+            <form
+              className="knowledge"
+              onSubmit={(e) => this.handleSubmitKnowledge(e)}
+            >
+              <h2>Kunnskap</h2>
               <input
                 value={knowledge.skill}
                 placeholder="Ferdighet"
