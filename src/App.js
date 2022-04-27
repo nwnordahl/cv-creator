@@ -17,6 +17,7 @@ class App extends Component {
         aboutMe: "",
       },
 
+      experiences: [],
       experience: {
         position: "",
         company: "",
@@ -25,8 +26,8 @@ class App extends Component {
         to: "",
         id: uniqid(),
       },
-      experiences: [],
 
+      educations: [],
       education: {
         school: "",
         place: "",
@@ -35,7 +36,12 @@ class App extends Component {
         to: "",
         id: uniqid(),
       },
-      educations: [],
+
+      knowledges: [],
+      knowledge: {
+        skill: "",
+        id: uniqid(),
+      },
     };
   }
 
@@ -121,6 +127,108 @@ class App extends Component {
     });
   }
 
+  handleExperienceChangeCompany(e) {
+    this.setState({
+      ...this.state,
+      experience: {
+        ...this.state.experience,
+        company: e.target.value,
+      },
+    });
+  }
+
+  handleExperienceChangePlace(e) {
+    this.setState({
+      ...this.state,
+      experience: {
+        ...this.state.experience,
+        place: e.target.value,
+      },
+    });
+  }
+
+  handleExperienceChangeFrom(e) {
+    this.setState({
+      ...this.state,
+      experience: {
+        ...this.state.experience,
+        from: e.target.value,
+      },
+    });
+  }
+
+  handleExperienceChangeTo(e) {
+    this.setState({
+      ...this.state,
+      experience: {
+        ...this.state.experience,
+        to: e.target.value,
+      },
+    });
+  }
+
+  // Handle changes in education input fields
+  handleEducationChangeSchool(e) {
+    this.setState({
+      ...this.state,
+      education: {
+        ...this.state.education,
+        school: e.target.value,
+      },
+    });
+  }
+
+  handleEducationChangePlace(e) {
+    this.setState({
+      ...this.state,
+      education: {
+        ...this.state.education,
+        place: e.target.value,
+      },
+    });
+  }
+
+  handleEducationChangeSubject(e) {
+    this.setState({
+      ...this.state,
+      education: {
+        ...this.state.education,
+        subject: e.target.value,
+      },
+    });
+  }
+
+  handleEducationChangeFrom(e) {
+    this.setState({
+      ...this.state,
+      education: {
+        ...this.state.education,
+        from: e.target.value,
+      },
+    });
+  }
+
+  handleEducationChangeTo(e) {
+    this.setState({
+      ...this.state,
+      education: {
+        ...this.state.education,
+        to: e.target.value,
+      },
+    });
+  }
+
+  // Handle changes in knowledge input field
+  handleKnowledgeChangeSkill(e) {
+    this.setState({
+      ...this.state,
+      knowledge: {
+        ...this.state.knowledge,
+        skill: e.target.value,
+      },
+    });
+  }
+
   // Submit
   handleSubmitExperience(e) {
     e.preventDefault();
@@ -139,8 +247,36 @@ class App extends Component {
     console.log(this.state);
   }
 
+  handleSubmitEducation(e) {
+    e.preventDefault();
+    this.setState({
+      ...this.state,
+      educations: this.state.educations.concat(this.state.education),
+      education: {
+        school: "",
+        place: "",
+        subject: "",
+        from: "",
+        to: "",
+        id: uniqid(),
+      },
+    });
+  }
+
+  handleSubmitKnowledge(e) {
+    e.preventDefault();
+    this.setState({
+      ...this.state,
+      knowledges: this.state.knowledges.concat(this.state.knowledge),
+      knowledge: {
+        skill: "",
+        id: uniqid(),
+      },
+    });
+  }
+
   render() {
-    const { experience } = this.state;
+    const { experience, education, knowledge } = this.state;
     const { name, title, email, phoneNumber, address, birthDate, aboutMe } =
       this.state.personalInformation;
     return (
@@ -216,20 +352,87 @@ class App extends Component {
                 type="text"
                 onChange={(e) => this.handleExperienceChangePosition(e)}
               />
+
+              <input
+                value={experience.company}
+                placeholder="Selskap"
+                type="text"
+                onChange={(e) => this.handleExperienceChangeCompany(e)}
+              />
+
+              <input
+                value={experience.place}
+                placeholder="Sted"
+                type="text"
+                onChange={(e) => this.handleExperienceChangePlace(e)}
+              />
+
+              <input
+                value={experience.from}
+                placeholder="Fra"
+                type="text"
+                onChange={(e) => this.handleExperienceChangeFrom(e)}
+              />
+
+              <input
+                value={experience.to}
+                placeholder="Til"
+                type="text"
+                onChange={(e) => this.handleExperienceChangeTo(e)}
+              />
+
               <button type="submit">Legg til</button>
-              <button>Fjern</button>
             </form>
 
             <h2>Utdannelse</h2>
-            <form>
+            <form onSubmit={(e) => this.handleSubmitEducation(e)}>
+              <input
+                value={education.school}
+                placeholder="Skole"
+                type="text"
+                onChange={(e) => this.handleEducationChangeSchool(e)}
+              />
+
+              <input
+                value={education.place}
+                placeholder="Sted"
+                type="text"
+                onChange={(e) => this.handleEducationChangePlace(e)}
+              />
+
+              <input
+                value={education.subject}
+                placeholder="Fag"
+                type="text"
+                onChange={(e) => this.handleEducationChangeSubject(e)}
+              />
+
+              <input
+                value={education.from}
+                placeholder="Fra"
+                type="text"
+                onChange={(e) => this.handleEducationChangeFrom(e)}
+              />
+
+              <input
+                value={education.to}
+                placeholder="Til"
+                type="text"
+                onChange={(e) => this.handleEducationChangeTo(e)}
+              />
+
               <button type="submit">Legg til</button>
-              <button>Fjern</button>
             </form>
 
             <h2>Kunnskap</h2>
-            <form>
+            <form onSubmit={(e) => this.handleSubmitKnowledge(e)}>
+              <input
+                value={knowledge.skill}
+                placeholder="Ferdighet"
+                type="text"
+                onChange={(e) => this.handleKnowledgeChangeSkill(e)}
+              />
               <button type="submit">Legg til</button>
-              <button>Fjern</button>
             </form>
           </div>
 
