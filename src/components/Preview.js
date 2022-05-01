@@ -3,7 +3,7 @@ import "../styles/preview.css";
 
 class Preview extends Component {
   render() {
-    const { name, title, email, phoneNumber, address, birthDate, aboutMe } =
+    const { name, title, email, phoneNumber, address, aboutMe } =
       this.props.information.personalInformation;
     const { experiences, educations, knowledges } = this.props.information;
 
@@ -17,14 +17,14 @@ class Preview extends Component {
         <hr />
 
         <div className="about">
-          <h2>Om Meg</h2>
+          <h2>Om meg</h2>
           <p>{aboutMe}</p>
         </div>
 
         <hr />
 
         <div className="personal-details">
-          <h2>Personlige Detaljer</h2>
+          <h2>Kontakt</h2>
 
           <h3>E-post</h3>
           <p>{email}</p>
@@ -34,9 +34,6 @@ class Preview extends Component {
 
           <h3>Adresse</h3>
           <p>{address}</p>
-
-          <h3>Fødselsdato</h3>
-          <p>{birthDate}</p>
         </div>
 
         <hr />
@@ -78,7 +75,7 @@ class Preview extends Component {
         </div>
 
         <div className="knowledges">
-          <h2>Kunnskap</h2>
+          <h2>Ferdigheter</h2>
           {knowledges.map((knowledge) => {
             return (
               <div key={knowledge.id}>

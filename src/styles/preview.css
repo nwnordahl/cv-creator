@@ -1,9 +1,8 @@
 .preview {
-  background: white;
-  margin: 0 100px 40px 100px;
   width: calc(85vh * 210 / 297);
   height: 85vh;
-  /* height: 1131.4px; */
   padding: 20px 50px;
+
+  background: white;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px 0px;
 }

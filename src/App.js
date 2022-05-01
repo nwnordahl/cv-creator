@@ -13,7 +13,6 @@ class App extends Component {
         email: "",
         phoneNumber: "",
         address: "",
-        birthDate: "",
         aboutMe: "",
       },
 
@@ -92,16 +91,6 @@ class App extends Component {
       personalInformation: {
         ...this.state.personalInformation,
         address: e.target.value,
-      },
-    });
-  }
-
-  handleChangeBirthDate(e) {
-    this.setState({
-      ...this.state,
-      personalInformation: {
-        ...this.state.personalInformation,
-        birthDate: e.target.value,
       },
     });
   }
@@ -277,13 +266,16 @@ class App extends Component {
 
   render() {
     const { experience, education, knowledge } = this.state;
-    const { name, title, email, phoneNumber, address, birthDate, aboutMe } =
+    const { name, title, email, phoneNumber, address, aboutMe } =
       this.state.personalInformation;
     return (
       <>
-        <h1 className="logo">Forhåndsvisning</h1>
+        <div className="flex-container-row">
+          <div className="flex-container-column">
+            <h1 className="logo">Forhåndsvisning</h1>
+            <Preview information={this.state} />
+          </div>
 
-        <div className="flex-container">
           <div className="form">
             <div className="personal-information">
               <h2>Generell Informasjon</h2>
@@ -325,14 +317,6 @@ class App extends Component {
                 placeholder="Adresse"
                 type="text"
                 onChange={(e) => this.handleChangeAddress(e)}
-              />
-
-              {/* Fødselsdato */}
-              <input
-                value={birthDate}
-                placeholder="Fødelsdato"
-                type="text"
-                onChange={(e) => this.handleChangeBirthDate(e)}
               />
 
               {/* Om meg */}
@@ -393,6 +377,13 @@ class App extends Component {
             >
               <h2>Utdannelse</h2>
               <input
+                value={education.subject}
+                placeholder="Fag"
+                type="text"
+                onChange={(e) => this.handleEducationChangeSubject(e)}
+              />
+
+              <input
                 value={education.school}
                 placeholder="Skole"
                 type="text"
@@ -404,13 +395,6 @@ class App extends Component {
                 placeholder="Sted"
                 type="text"
                 onChange={(e) => this.handleEducationChangePlace(e)}
-              />
-
-              <input
-                value={education.subject}
-                placeholder="Fag"
-                type="text"
-                onChange={(e) => this.handleEducationChangeSubject(e)}
               />
 
               <input
@@ -434,7 +418,7 @@ class App extends Component {
               className="knowledge"
               onSubmit={(e) => this.handleSubmitKnowledge(e)}
             >
-              <h2>Kunnskap</h2>
+              <h2>Ferdigheter</h2>
               <input
                 value={knowledge.skill}
                 placeholder="Ferdighet"
@@ -444,8 +428,6 @@ class App extends Component {
               <button type="submit">Legg til</button>
             </form>
           </div>
-
-          <Preview information={this.state} />
         </div>
       </>
     );
