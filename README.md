@@ -4,7 +4,7 @@ Create a stunning curriculum vitae, 100% job guarantee!
 
 ## TODO
 
-- Responsitivity
+- Responsitivity [*]
 - Make cv preview scale to different screen sizes (ratios should be same)
 - Dark theme
 - Export cv as pdf
