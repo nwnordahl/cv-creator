@@ -1,5 +1,6 @@
 import { Component } from "react";
 import "../styles/preview.css";
+import Profilbilde from "../img/Profilbilde.jpeg";
 
 class Preview extends Component {
   render() {
@@ -14,75 +15,91 @@ class Preview extends Component {
           <p>{title}</p>
         </div>
 
-        <hr />
+        <div className="main-content">
+          <div className="contact">
+            <h2>Kontakt</h2>
+            <hr />
 
-        <div className="about">
-          <h2>Om meg</h2>
-          <p>{aboutMe}</p>
-        </div>
+            <img src={Profilbilde} alt="Profilbilde" />
 
-        <hr />
+            <h3>E-post</h3>
+            <p>{email}</p>
 
-        <div className="personal-details">
-          <h2>Kontakt</h2>
+            <h3>Telefon</h3>
+            <p>{phoneNumber}</p>
 
-          <h3>E-post</h3>
-          <p>{email}</p>
+            <h3>Adresse</h3>
+            <p>{address}</p>
+          </div>
 
-          <h3>Telefon</h3>
-          <p>{phoneNumber}</p>
+          <div className="resume">
+            <div className="about">
+              <h2>Om meg</h2>
+              <hr />
 
-          <h3>Adresse</h3>
-          <p>{address}</p>
-        </div>
+              <p>{aboutMe}</p>
+            </div>
 
-        <hr />
+            <div className="experiences">
+              <h2>Erfaring</h2>
+              <hr />
 
-        <div className="experiences">
-          <h2>Erfaring</h2>
-          {experiences.map((experience) => {
-            return (
-              <div key={experience.id}>
-                <p>
-                  {experience.from} - {experience.to}
-                </p>
-                <h3>{experience.position}</h3>
-                <p>
-                  {experience.company}, {experience.place}
-                </p>
+              <div className="resume-list">
+                {experiences.map((experience) => {
+                  return (
+                    <div className="resume-list-item" key={experience.id}>
+                      <p>
+                        {experience.from} - {experience.to}
+                      </p>
+                      <div>
+                        <h3>{experience.position}</h3>
+                        <p>
+                          {experience.company}, {experience.place}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-            );
-          })}
-        </div>
+            </div>
 
-        <hr />
+            <div className="educations">
+              <h2>Utdannelse</h2>
+              <hr />
 
-        <div className="educations">
-          <h2>Utdannelse</h2>
-          {educations.map((education) => {
-            return (
-              <div key={education.id}>
-                <p>
-                  {education.from} - {education.to}
-                </p>
-                <h3>
-                  {education.school}, {education.place}
-                </h3>
-                <p>Fag: {education.subject}</p>
+              <div className="resume-list">
+                {educations.map((education) => {
+                  return (
+                    <div className="resume-list-item" key={education.id}>
+                      <p>
+                        {education.from} - {education.to}
+                      </p>
+                      <div>
+                        <h3>
+                          {education.school}, {education.place}
+                        </h3>
+                        <p>Fag: {education.subject}</p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-            );
-          })}
-        </div>
+            </div>
 
-        <div className="knowledges">
-          <h2>Ferdigheter</h2>
-          {knowledges.map((knowledge) => {
-            return (
-              <div key={knowledge.id}>
-                <p>{knowledge.skill}</p>
+            <div className="knowledges">
+              <h2>Ferdigheter</h2>
+              <hr />
+              <div className="knowledges-tag-container">
+                {knowledges.map((knowledge) => {
+                  return (
+                    <div className="knowledges-tag" key={knowledge.id}>
+                      <p>{knowledge.skill}</p>
+                    </div>
+                  );
+                })}
               </div>
-            );
-          })}
+            </div>
+          </div>
         </div>
       </div>
     );
