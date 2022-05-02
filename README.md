@@ -5,15 +5,15 @@ Create a stunning curriculum vitae, 100% job guarantee!
 ## TODO
 
 - Responsitivity [*]
-- Make cv preview scale to different screen sizes (ratios should be same)
-- Dark theme
+- Make cv preview scale to different screen sizes (ratios should be same) [*]
 - Export cv as pdf
-- Refactor code and organize the code in smaller components
 - Make it possible to add image
 - Make it possible to remove what is added
 - Adjust font size and line height
 - Small adjustments in style
 - Adjust colors
+- Refactor code and organize the code in smaller components
+- Dark theme
 
 ## Requirements
 
