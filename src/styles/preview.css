@@ -35,6 +35,7 @@ hr {
 
 .preview .header h1 {
   font-size: calc(var(--cv-preview-height) / (8 * 3));
+  line-height: 1.1;
 }
 
 .preview .header p {
@@ -69,11 +70,13 @@ hr {
 
 .preview .main-content .contact h3 {
   font-size: calc(var(--cv-preview-height) / (8 * 6));
+  line-height: 1.1;
 }
 
 .preview .main-content .contact p {
   font-size: calc(var(--cv-preview-height) / (8 * 6));
   margin-bottom: calc(var(--cv-preview-height) / (8 * 20));
+  line-height: 1.1;
 }
 
 /* Resume */
@@ -91,6 +94,11 @@ hr {
 .main-content .resume .about h2 {
   color: var(--color-primary);
   font-size: calc(var(--cv-preview-height) / (8 * 5));
+}
+
+.main-content .resume .about p {
+  font-size: calc(var(--cv-preview-height) / (8 * 6));
+  line-height: 1.3;
 }
 
 /* Experiences */
@@ -119,6 +127,7 @@ hr {
   font-size: calc(var(--cv-preview-height) / (8 * 5));
 }
 
+/* Knowledges tags */
 .main-content .resume .knowledges .knowledges-tag-container {
   display: flex;
   flex-wrap: wrap;
@@ -138,10 +147,37 @@ hr {
   justify-content: center;
 }
 
+.knowledges-tag p {
+  font-size: calc(var(--cv-preview-height) / (8 * 7));
+}
+
 /* Resume list, appear in experiences and educations */
 .resume .resume-list .resume-list-item {
   display: flex;
   align-items: baseline;
   gap: calc(var(--cv-preview-height) / (8 * 4));
   margin-bottom: calc(var(--cv-preview-height) / (8 * 20));
+}
+
+.resume-list .resume-list-item h3 {
+  font-size: calc(var(--cv-preview-height) / (8 * 6));
+}
+
+.resume-list .resume-list-item p {
+  font-size: calc(var(--cv-preview-height) / (8 * 7));
+}
+
+/* Media queries */
+@media (max-width: 800px) {
+  :root {
+    --cv-preview-width: calc(95vw - 20px);
+    --cv-preview-height: calc((95vw - 20px) * 297 / 210);
+  }
+}
+
+@media (max-width: 500px) {
+  :root {
+    --cv-preview-width: calc(100vw - 16px);
+    --cv-preview-height: calc((100vw - 16px) * 297 / 210);
+  }
 }

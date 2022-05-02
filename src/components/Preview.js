@@ -41,14 +41,14 @@ class Preview extends Component {
             </div>
 
             <div className="experiences">
-              <h2>Erfaring</h2>
+              <h2>Jobberfaring</h2>
               <hr />
 
               <div className="resume-list">
                 {experiences.map((experience) => {
                   return (
                     <div className="resume-list-item" key={experience.id}>
-                      <p>
+                      <p className="duration">
                         {experience.from} - {experience.to}
                       </p>
                       <div>
@@ -71,7 +71,7 @@ class Preview extends Component {
                 {educations.map((education) => {
                   return (
                     <div className="resume-list-item" key={education.id}>
-                      <p>
+                      <p className="duration">
                         {education.from} - {education.to}
                       </p>
                       <div>

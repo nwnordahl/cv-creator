@@ -9,12 +9,11 @@
 
 body {
   background-color: whitesmoke;
-  margin: 20px 0;
+  margin: 20px 0px;
 }
 
 /* General styling */
 .flex-container-row {
-  height: calc(100vh - 2 * 20px);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -95,4 +94,17 @@ button {
 button:hover {
   opacity: 0.75;
   cursor: pointer;
+}
+
+/* Media queries */
+@media (max-width: 800px) {
+  body {
+    margin: 20px 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    margin: 0 8px 8px 8px;
+  }
 }

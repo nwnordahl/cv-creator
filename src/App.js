@@ -332,7 +332,7 @@ class App extends Component {
               className="experience"
               onSubmit={(e) => this.handleSubmitExperience(e)}
             >
-              <h2>Erfaring</h2>
+              <h2>Jobberfaring</h2>
               <input
                 value={experience.position}
                 placeholder="Stilling"
