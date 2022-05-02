@@ -107,4 +107,12 @@ button:hover {
   body {
     margin: 0 8px 8px 8px;
   }
+
+  .flex-container-row {
+    gap: 20px;
+  }
+
+  .form {
+    padding: 10px 15px;
+  }
 }
