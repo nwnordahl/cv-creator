@@ -18,7 +18,7 @@
 
 hr {
   border: 1px solid var(--color-hr);
-  margin-bottom: calc(var(--cv-preview-height) / (8 * 20));
+  margin-bottom: calc(var(--cv-preview-height) / (8 * 12));
 }
 
 /* Header */
@@ -122,22 +122,26 @@ hr {
 .main-content .resume .knowledges .knowledges-tag-container {
   display: flex;
   flex-wrap: wrap;
-  gap: calc(var(--cv-preview-height) / (8 * 15));
+  gap: calc(var(--cv-preview-height) / (8 * 20));
 }
 
 .resume .knowledges .knowledges-tag-container .knowledges-tag {
   background-color: var(--color-primary);
   color: var(--color-secondary);
   font-weight: bold;
-  padding: calc(var(--cv-preview-height) / (8 * 40))
+  padding: calc(var(--cv-preview-height) / (8 * 60))
     calc(var(--cv-preview-height) / (8 * 8));
   border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Resume list, appear in experiences and educations */
 .resume .resume-list .resume-list-item {
   display: flex;
   align-items: baseline;
-  gap: calc(var(--cv-preview-height) / (8 * 5));
+  gap: calc(var(--cv-preview-height) / (8 * 4));
   margin-bottom: calc(var(--cv-preview-height) / (8 * 20));
 }
