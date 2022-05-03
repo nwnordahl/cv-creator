@@ -1,19 +1,29 @@
 # CV Creator
 
-Create a stunning curriculum vitae, 100% job guarantee!
+Create a stunning curriculum vitae, **100% job guarantee!**
+This web application is fully responsive; Use it on your phone, tablet or pc (even your *ultra wide screen monitor!*)
 
 ## TODO
 
+**(Tasks that are finished are marked with a "[*]".)**
+
+**(Tasks that has work in progress are marked with a "[/]".)**
+
 - Responsitivity [*]
 - Make cv preview scale to different screen sizes (ratios should be same) [*]
-- Export cv as pdf
+- Export cv as pdf [/]
 - Make it possible to add image
+- Form control
 - Make it possible to remove what is added
-- Adjust font size and line height
-- Small adjustments in style
-- Adjust colors
+- Adjust font size and line height [/]
+- Small adjustments in style [/]
+- Adjust colors [/]
 - Refactor code and organize the code in smaller components
+- Add tests
 - Dark theme
+- Add example CV
+- Save locally (localstorage)
+- Save in the cloud (backend)
 
 ## Requirements
 
