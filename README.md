@@ -25,6 +25,16 @@ This web application is fully responsive; Use it on your phone, tablet or pc (ev
 - Save locally (localstorage)
 - Save in the cloud (backend)
 
+## A note on deployment
+This project is hosted on [GitHub Pages](https://pages.github.com/), but as this is made with React,
+there are some additional steps (build and deployment is not initiated per commit/push to upstream). To build and deploy the project, run the command
+
+```bash
+$ npm run deployment
+```
+
+(as described in [this article](https://medium.com/@isharamalaviarachchi/how-to-deploy-your-react-app-into-github-pages-b2c96292b18e)).
+
 ## Requirements
 
 [Git](https://git-scm.com/) and [npm](https://npm.community/).
