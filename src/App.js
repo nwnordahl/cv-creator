@@ -1,5 +1,6 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import uniqid from "uniqid";
+import ReactToPrint from "react-to-print";
 import Preview from "./components/Preview";
 
 class App extends Component {
@@ -273,7 +274,16 @@ class App extends Component {
         <div className="flex-container-row">
           <div className="flex-container-column">
             <h1 className="logo">Forhåndsvisning</h1>
-            <Preview information={this.state} />
+            <ReactToPrint
+              trigger={() => {
+                return <a href="#">Lagre</a>;
+              }}
+              content={() => this.componentRef}
+            />
+            <Preview
+              information={this.state}
+              ref={(el) => (this.componentRef = el)}
+            />
           </div>
 
           <div className="form">

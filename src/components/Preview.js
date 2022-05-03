@@ -89,6 +89,7 @@ class Preview extends Component {
             <div className="knowledges">
               <h2>Ferdigheter</h2>
               <hr />
+
               <div className="knowledges-tag-container">
                 {knowledges.map((knowledge) => {
                   return (
