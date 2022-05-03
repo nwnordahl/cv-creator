@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/cv-creator/static/css/main.5eb755fc.css",
-    "main.js": "/cv-creator/static/js/main.90d284ce.js",
+    "main.css": "/cv-creator/static/css/main.6afa494b.css",
+    "main.js": "/cv-creator/static/js/main.94465eec.js",
     "static/media/Profilbilde.jpeg": "/cv-creator/static/media/Profilbilde.527e4d3b56f364408964.jpeg",
     "index.html": "/cv-creator/index.html",
-    "main.5eb755fc.css.map": "/cv-creator/static/css/main.5eb755fc.css.map",
-    "main.90d284ce.js.map": "/cv-creator/static/js/main.90d284ce.js.map"
+    "main.6afa494b.css.map": "/cv-creator/static/css/main.6afa494b.css.map",
+    "main.94465eec.js.map": "/cv-creator/static/js/main.94465eec.js.map"
   },
   "entrypoints": [
-    "static/css/main.5eb755fc.css",
-    "static/js/main.90d284ce.js"
+    "static/css/main.6afa494b.css",
+    "static/js/main.94465eec.js"
   ]
 }
