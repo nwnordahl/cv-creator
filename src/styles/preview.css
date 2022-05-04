@@ -13,7 +13,7 @@
   height: var(--cv-preview-height);
 
   background: white;
-  /* box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px 0px; */
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px 0px;
 }
 
 hr {
@@ -61,6 +61,7 @@ hr {
     var(--cv-preview-width) / 3 - 2 * var(--cv-preview-height) / (8 * 7)
   );
   margin-bottom: calc(var(--cv-preview-height) / (8 * 20));
+  border-radius: calc(var(--cv-preview-height) / (8 * 35));
 }
 
 .preview .main-content .contact h2 {
@@ -140,7 +141,7 @@ hr {
   font-weight: bold;
   padding: calc(var(--cv-preview-height) / (8 * 60))
     calc(var(--cv-preview-height) / (8 * 8));
-  border-radius: 12px;
+  border-radius: calc(var(--cv-preview-height) / (8 * 6));
 
   display: flex;
   align-items: center;
@@ -164,6 +165,7 @@ hr {
 }
 
 .resume-list .resume-list-item p {
+  flex-shrink: 0;
   font-size: calc(var(--cv-preview-height) / (8 * 7));
 }
 
