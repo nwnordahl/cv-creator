@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/cv-creator/static/css/main.0b582238.css",
-    "main.js": "/cv-creator/static/js/main.65460a02.js",
+    "main.css": "/cv-creator/static/css/main.ffeab619.css",
+    "main.js": "/cv-creator/static/js/main.1867d99d.js",
     "index.html": "/cv-creator/index.html",
-    "main.0b582238.css.map": "/cv-creator/static/css/main.0b582238.css.map",
-    "main.65460a02.js.map": "/cv-creator/static/js/main.65460a02.js.map"
+    "main.ffeab619.css.map": "/cv-creator/static/css/main.ffeab619.css.map",
+    "main.1867d99d.js.map": "/cv-creator/static/js/main.1867d99d.js.map"
   },
   "entrypoints": [
-    "static/css/main.0b582238.css",
-    "static/js/main.65460a02.js"
+    "static/css/main.ffeab619.css",
+    "static/js/main.1867d99d.js"
   ]
 }
