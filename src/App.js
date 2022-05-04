@@ -286,16 +286,6 @@ class App extends Component {
         <div className="flex-container-row">
           <div className="flex-container-column">
             <h1 className="logo">Forhåndsvisning</h1>
-            <ReactToPrint
-              trigger={() => {
-                return (
-                  <a href="#" className="button">
-                    Lagre CV som PDF / Skriv ut CV
-                  </a>
-                );
-              }}
-              content={() => this.componentRef}
-            />
             <Preview
               information={this.state}
               ref={(el) => (this.componentRef = el)}
@@ -375,7 +365,7 @@ class App extends Component {
                 type="text"
                 onChange={(e) => this.handleKnowledgeChangeSkill(e)}
               />
-              <button type="submit">Legg til</button>
+              <button type="submit">Legg til ferdighet</button>
             </form>
 
             <form
@@ -463,6 +453,17 @@ class App extends Component {
 
               <button type="submit">Legg til utdannelse</button>
             </form>
+
+            <ReactToPrint
+              trigger={() => {
+                return (
+                  <a href="#" className="button">
+                    Lagre CV som PDF / Skriv ut CV
+                  </a>
+                );
+              }}
+              content={() => this.componentRef}
+            />
           </div>
         </div>
       </>

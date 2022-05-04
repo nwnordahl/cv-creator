@@ -17,6 +17,11 @@ input[type="file"] {
   display: none;
 }
 
+a {
+  text-decoration: none;
+  text-align: center;
+}
+
 /* General styling */
 .flex-container-row {
   display: flex;
@@ -42,6 +47,7 @@ input[type="file"] {
 
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
