@@ -1,7 +1,9 @@
 # CV Creator
 
 Create a stunning curriculum vitae, **100% job guarantee!**
-This web application is fully responsive; Use it on your phone, tablet or pc (even your *ultra wide screen monitor!*)
+This web application is fully responsive; Use it on your phone, tablet or pc (or even on your *ultra wide screen monitor!*)
+
+<img src="./img/cv_creator_screenshot.png" />
 
 ## TODO
 
