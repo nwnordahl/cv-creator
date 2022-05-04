@@ -1,6 +1,5 @@
 import { Component } from "react";
 import "../styles/preview.css";
-import Profilbilde from "../img/Profilbilde.jpeg";
 
 class Preview extends Component {
   render() {

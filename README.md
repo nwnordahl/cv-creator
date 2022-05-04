@@ -62,3 +62,9 @@ $ npm run start
 ## How to use
 
 If you want to use it locally, make sure that you have done the steps above. Open your browser, and go to `localhost:3000`.
+
+## Built with
+
+- [React](https://github.com/facebook/react)
+- [ReactToPrint](https://github.com/gregnb/react-to-print)
+- [Uniqid](https://github.com/adamhalasz/uniqid)

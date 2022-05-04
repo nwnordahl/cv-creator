@@ -288,7 +288,11 @@ class App extends Component {
             <h1 className="logo">Forhåndsvisning</h1>
             <ReactToPrint
               trigger={() => {
-                return <a href="#">Lagre</a>;
+                return (
+                  <a href="#" className="button">
+                    Lagre CV som PDF / Skriv ut CV
+                  </a>
+                );
               }}
               content={() => this.componentRef}
             />
@@ -414,7 +418,7 @@ class App extends Component {
                 onChange={(e) => this.handleExperienceChangeTo(e)}
               />
 
-              <button type="submit">Legg til</button>
+              <button type="submit">Legg til jobberfaring</button>
             </form>
 
             <form
@@ -457,7 +461,7 @@ class App extends Component {
                 onChange={(e) => this.handleEducationChangeTo(e)}
               />
 
-              <button type="submit">Legg til</button>
+              <button type="submit">Legg til utdannelse</button>
             </form>
           </div>
         </div>
