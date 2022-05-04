@@ -12,6 +12,9 @@
   width: var(--cv-preview-width);
   height: var(--cv-preview-height);
 
+  display: flex;
+  flex-direction: column;
+
   background: white;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px 0px;
 }
@@ -47,6 +50,7 @@ hr {
   height: calc(var(--cv-preview-height) * 7 / 8);
   display: flex;
   flex-direction: row-reverse;
+  flex-grow: 1;
 }
 
 /* Contact */
@@ -82,6 +86,7 @@ hr {
 
 /* Resume */
 .preview .main-content .resume {
+  flex-grow: 1;
   width: calc(var(--cv-preview-width) * 2 / 3);
   background-color: var(--color-secondary);
   padding: calc(var(--cv-preview-height) / (8 * 7));

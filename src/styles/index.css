@@ -13,6 +13,10 @@ body {
   margin: 20px 0px;
 }
 
+input[type="file"] {
+  display: none;
+}
+
 /* General styling */
 .flex-container-row {
   display: flex;
@@ -81,18 +85,20 @@ body {
 }
 
 /* Button */
-button {
+button,
+.button {
   border: 0;
   padding: 10px 30px;
   font-size: 16px;
   color: white;
   font-weight: bold;
-  background-color: #6abfc3;
+  background-color: #6abfc3 !important;
   border-radius: 8px;
   box-shadow: 0 0.05em 0.25em 0 rgb(0 0 0 / 50%);
 }
 
-button:hover {
+button:hover,
+.button:hover {
   opacity: 0.75;
   cursor: pointer;
 }

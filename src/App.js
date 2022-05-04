@@ -15,6 +15,7 @@ class App extends Component {
         phoneNumber: "",
         address: "",
         aboutMe: "",
+        image: "",
       },
 
       experiences: [],
@@ -102,6 +103,17 @@ class App extends Component {
       personalInformation: {
         ...this.state.personalInformation,
         aboutMe: e.target.value,
+      },
+    });
+  }
+
+  handleChangeImage(e) {
+    console.log(e);
+    this.setState({
+      ...this.state,
+      personalInformation: {
+        ...this.state.personalInformation,
+        image: URL.createObjectURL(e.target.files[0]),
       },
     });
   }
@@ -267,7 +279,7 @@ class App extends Component {
 
   render() {
     const { experience, education, knowledge } = this.state;
-    const { name, title, email, phoneNumber, address, aboutMe } =
+    const { name, title, email, phoneNumber, address, aboutMe, image } =
       this.state.personalInformation;
     return (
       <>
@@ -336,7 +348,31 @@ class App extends Component {
                 type="text"
                 onChange={(e) => this.handleChangeAboutMe(e)}
               />
+
+              <label htmlFor="image-upload" className="button">
+                Legg til profilbilde
+              </label>
+              <input
+                id="image-upload"
+                type="file"
+                accept="image"
+                onChange={(e) => this.handleChangeImage(e)}
+              />
             </div>
+
+            <form
+              className="knowledge"
+              onSubmit={(e) => this.handleSubmitKnowledge(e)}
+            >
+              <h2>Ferdigheter</h2>
+              <input
+                value={knowledge.skill}
+                placeholder="Ferdighet"
+                type="text"
+                onChange={(e) => this.handleKnowledgeChangeSkill(e)}
+              />
+              <button type="submit">Legg til</button>
+            </form>
 
             <form
               className="experience"
@@ -421,20 +457,6 @@ class App extends Component {
                 onChange={(e) => this.handleEducationChangeTo(e)}
               />
 
-              <button type="submit">Legg til</button>
-            </form>
-
-            <form
-              className="knowledge"
-              onSubmit={(e) => this.handleSubmitKnowledge(e)}
-            >
-              <h2>Ferdigheter</h2>
-              <input
-                value={knowledge.skill}
-                placeholder="Ferdighet"
-                type="text"
-                onChange={(e) => this.handleKnowledgeChangeSkill(e)}
-              />
               <button type="submit">Legg til</button>
             </form>
           </div>
