@@ -26,7 +26,7 @@ hr {
 
 /* Header */
 .preview .header {
-  height: calc(var(--cv-preview-height) / 8);
+  max-height: calc(var(--cv-preview-height) / 8);
   background-color: var(--color-primary);
   color: var(--color-secondary);
   padding: calc(var(--cv-preview-height) / (8 * 7));
@@ -43,6 +43,7 @@ hr {
 
 .preview .header p {
   font-size: calc(var(--cv-preview-height) / (8 * 4));
+  font-style: italic;
 }
 
 /* Main content */
