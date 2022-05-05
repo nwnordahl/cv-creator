@@ -279,7 +279,7 @@ class App extends Component {
 
   render() {
     const { experience, education, knowledge } = this.state;
-    const { name, title, email, phoneNumber, address, aboutMe, image } =
+    const { name, title, email, phoneNumber, address, aboutMe } =
       this.state.personalInformation;
     return (
       <>
@@ -344,7 +344,7 @@ class App extends Component {
               />
 
               <label htmlFor="image-upload" className="button">
-                Legg til profilbilde
+                Legg til bilde
               </label>
               <input
                 id="image-upload"

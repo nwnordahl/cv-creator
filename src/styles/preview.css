@@ -189,3 +189,14 @@ hr {
     --cv-preview-height: calc((100vw - 16px) * 297 / 210);
   }
 }
+
+@media print {
+  .preview {
+    width: 210mm;
+    height: 297mm;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}

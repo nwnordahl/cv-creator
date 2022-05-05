@@ -13,7 +13,7 @@ This web application is fully responsive; Use it on your phone, tablet or pc (or
 
 - Responsitivity [*]
 - Make cv preview scale to different screen sizes (ratios should be same) [*]
-- Export cv as pdf [/]
+- Export cv as pdf [*]
 - Make it possible to add image [*]
 - Form control
 - Make it possible to remove what is added
