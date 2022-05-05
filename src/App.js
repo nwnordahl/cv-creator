@@ -283,187 +283,187 @@ class App extends Component {
       this.state.personalInformation;
     return (
       <>
-        <div className="flex-container-row">
-          <div className="flex-container-column">
-            <h1 className="logo">Forhåndsvisning</h1>
+        <div className="flex-container-column">
+          <h1 className="logo">Forhåndsvisning</h1>
+          <div className="flex-container-row">
             <Preview
               information={this.state}
               ref={(el) => (this.componentRef = el)}
             />
-          </div>
 
-          <div className="form">
-            <div className="personal-information">
-              <h2>Generell Informasjon</h2>
-              {/* Fullt navn */}
-              <input
-                value={name}
-                placeholder="Fullt navn"
-                type="text"
-                onChange={(e) => this.handleChangeName(e)}
-              />
+            <div className="form">
+              <div className="personal-information">
+                <h2>Generell Informasjon</h2>
+                {/* Fullt navn */}
+                <input
+                  value={name}
+                  placeholder="Fullt navn"
+                  type="text"
+                  onChange={(e) => this.handleChangeName(e)}
+                />
 
-              {/* Tittel */}
-              <input
-                value={title}
-                placeholder="Tittel"
-                type="text"
-                onChange={(e) => this.handleChangeTitle(e)}
-              />
+                {/* Tittel */}
+                <input
+                  value={title}
+                  placeholder="Tittel"
+                  type="text"
+                  onChange={(e) => this.handleChangeTitle(e)}
+                />
 
-              {/* E-post */}
-              <input
-                value={email}
-                placeholder="E-post"
-                type="email"
-                onChange={(e) => this.handleChangeEmail(e)}
-              />
+                {/* E-post */}
+                <input
+                  value={email}
+                  placeholder="E-post"
+                  type="email"
+                  onChange={(e) => this.handleChangeEmail(e)}
+                />
 
-              {/* Telefonnummer */}
-              <input
-                value={phoneNumber}
-                placeholder="Telefonnummer"
-                type="text"
-                onChange={(e) => this.handleChangePhoneNumber(e)}
-              />
+                {/* Telefonnummer */}
+                <input
+                  value={phoneNumber}
+                  placeholder="Telefonnummer"
+                  type="text"
+                  onChange={(e) => this.handleChangePhoneNumber(e)}
+                />
 
-              {/* Adresse */}
-              <input
-                value={address}
-                placeholder="Adresse"
-                type="text"
-                onChange={(e) => this.handleChangeAddress(e)}
-              />
+                {/* Adresse */}
+                <input
+                  value={address}
+                  placeholder="Adresse"
+                  type="text"
+                  onChange={(e) => this.handleChangeAddress(e)}
+                />
 
-              {/* Om meg */}
-              <input
-                value={aboutMe}
-                placeholder="Om meg"
-                type="text"
-                onChange={(e) => this.handleChangeAboutMe(e)}
-              />
+                {/* Om meg */}
+                <input
+                  value={aboutMe}
+                  placeholder="Om meg"
+                  type="text"
+                  onChange={(e) => this.handleChangeAboutMe(e)}
+                />
 
-              <label htmlFor="image-upload" className="button">
-                Legg til bilde
-              </label>
-              <input
-                id="image-upload"
-                type="file"
-                accept="image"
-                onChange={(e) => this.handleChangeImage(e)}
+                <label htmlFor="image-upload" className="button">
+                  Legg til bilde
+                </label>
+                <input
+                  id="image-upload"
+                  type="file"
+                  accept="image"
+                  onChange={(e) => this.handleChangeImage(e)}
+                />
+              </div>
+
+              <form
+                className="knowledge"
+                onSubmit={(e) => this.handleSubmitKnowledge(e)}
+              >
+                <h2>Ferdigheter</h2>
+                <input
+                  value={knowledge.skill}
+                  placeholder="Ferdighet"
+                  type="text"
+                  onChange={(e) => this.handleKnowledgeChangeSkill(e)}
+                />
+                <button type="submit">Legg til ferdighet</button>
+              </form>
+
+              <form
+                className="experience"
+                onSubmit={(e) => this.handleSubmitExperience(e)}
+              >
+                <h2>Jobberfaring</h2>
+                <input
+                  value={experience.position}
+                  placeholder="Stilling"
+                  type="text"
+                  onChange={(e) => this.handleExperienceChangePosition(e)}
+                />
+
+                <input
+                  value={experience.company}
+                  placeholder="Selskap"
+                  type="text"
+                  onChange={(e) => this.handleExperienceChangeCompany(e)}
+                />
+
+                <input
+                  value={experience.place}
+                  placeholder="Sted"
+                  type="text"
+                  onChange={(e) => this.handleExperienceChangePlace(e)}
+                />
+
+                <input
+                  value={experience.from}
+                  placeholder="Fra"
+                  type="text"
+                  onChange={(e) => this.handleExperienceChangeFrom(e)}
+                />
+
+                <input
+                  value={experience.to}
+                  placeholder="Til"
+                  type="text"
+                  onChange={(e) => this.handleExperienceChangeTo(e)}
+                />
+
+                <button type="submit">Legg til jobberfaring</button>
+              </form>
+
+              <form
+                className="education"
+                onSubmit={(e) => this.handleSubmitEducation(e)}
+              >
+                <h2>Utdannelse</h2>
+                <input
+                  value={education.subject}
+                  placeholder="Fag"
+                  type="text"
+                  onChange={(e) => this.handleEducationChangeSubject(e)}
+                />
+
+                <input
+                  value={education.school}
+                  placeholder="Skole"
+                  type="text"
+                  onChange={(e) => this.handleEducationChangeSchool(e)}
+                />
+
+                <input
+                  value={education.place}
+                  placeholder="Sted"
+                  type="text"
+                  onChange={(e) => this.handleEducationChangePlace(e)}
+                />
+
+                <input
+                  value={education.from}
+                  placeholder="Fra"
+                  type="text"
+                  onChange={(e) => this.handleEducationChangeFrom(e)}
+                />
+
+                <input
+                  value={education.to}
+                  placeholder="Til"
+                  type="text"
+                  onChange={(e) => this.handleEducationChangeTo(e)}
+                />
+
+                <button type="submit">Legg til utdannelse</button>
+              </form>
+
+              <ReactToPrint
+                trigger={() => {
+                  return (
+                    <a href="#" className="button">
+                      Lagre CV som PDF / Skriv ut CV
+                    </a>
+                  );
+                }}
+                content={() => this.componentRef}
               />
             </div>
-
-            <form
-              className="knowledge"
-              onSubmit={(e) => this.handleSubmitKnowledge(e)}
-            >
-              <h2>Ferdigheter</h2>
-              <input
-                value={knowledge.skill}
-                placeholder="Ferdighet"
-                type="text"
-                onChange={(e) => this.handleKnowledgeChangeSkill(e)}
-              />
-              <button type="submit">Legg til ferdighet</button>
-            </form>
-
-            <form
-              className="experience"
-              onSubmit={(e) => this.handleSubmitExperience(e)}
-            >
-              <h2>Jobberfaring</h2>
-              <input
-                value={experience.position}
-                placeholder="Stilling"
-                type="text"
-                onChange={(e) => this.handleExperienceChangePosition(e)}
-              />
-
-              <input
-                value={experience.company}
-                placeholder="Selskap"
-                type="text"
-                onChange={(e) => this.handleExperienceChangeCompany(e)}
-              />
-
-              <input
-                value={experience.place}
-                placeholder="Sted"
-                type="text"
-                onChange={(e) => this.handleExperienceChangePlace(e)}
-              />
-
-              <input
-                value={experience.from}
-                placeholder="Fra"
-                type="text"
-                onChange={(e) => this.handleExperienceChangeFrom(e)}
-              />
-
-              <input
-                value={experience.to}
-                placeholder="Til"
-                type="text"
-                onChange={(e) => this.handleExperienceChangeTo(e)}
-              />
-
-              <button type="submit">Legg til jobberfaring</button>
-            </form>
-
-            <form
-              className="education"
-              onSubmit={(e) => this.handleSubmitEducation(e)}
-            >
-              <h2>Utdannelse</h2>
-              <input
-                value={education.subject}
-                placeholder="Fag"
-                type="text"
-                onChange={(e) => this.handleEducationChangeSubject(e)}
-              />
-
-              <input
-                value={education.school}
-                placeholder="Skole"
-                type="text"
-                onChange={(e) => this.handleEducationChangeSchool(e)}
-              />
-
-              <input
-                value={education.place}
-                placeholder="Sted"
-                type="text"
-                onChange={(e) => this.handleEducationChangePlace(e)}
-              />
-
-              <input
-                value={education.from}
-                placeholder="Fra"
-                type="text"
-                onChange={(e) => this.handleEducationChangeFrom(e)}
-              />
-
-              <input
-                value={education.to}
-                placeholder="Til"
-                type="text"
-                onChange={(e) => this.handleEducationChangeTo(e)}
-              />
-
-              <button type="submit">Legg til utdannelse</button>
-            </form>
-
-            <ReactToPrint
-              trigger={() => {
-                return (
-                  <a href="#" className="button">
-                    Lagre CV som PDF / Skriv ut CV
-                  </a>
-                );
-              }}
-              content={() => this.componentRef}
-            />
           </div>
         </div>
       </>

@@ -9,8 +9,12 @@
 }
 
 body {
+  height: 100vh;
   background-color: whitesmoke;
-  margin: 20px 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 input[type="file"] {
@@ -34,7 +38,6 @@ a {
 .flex-container-column {
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
 
 /* Form */
@@ -110,6 +113,18 @@ button:hover,
 }
 
 /* Media queries */
+@media (max-width: 1400px) {
+  body {
+    margin: 20px 5px;
+    display: initial;
+  }
+
+  .flex-container-column {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 @media (max-width: 800px) {
   body {
     margin: 20px 10px;
