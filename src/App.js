@@ -2,48 +2,53 @@ import React, { Component } from "react";
 import uniqid from "uniqid";
 import ReactToPrint from "react-to-print";
 import Preview from "./components/Preview";
+import exampleCV from "./exampleCV";
 
 class App extends Component {
   constructor() {
     super();
 
-    this.state = {
-      personalInformation: {
-        name: "",
-        title: "",
-        email: "",
-        phoneNumber: "",
-        address: "",
-        aboutMe: "",
-        image: "",
-      },
+    if (window.location.href.split("?")[1] === "preview=example") {
+      this.state = exampleCV;
+    } else {
+      this.state = {
+        personalInformation: {
+          name: "",
+          title: "",
+          email: "",
+          phoneNumber: "",
+          address: "",
+          aboutMe: "",
+          image: "",
+        },
 
-      experiences: [],
-      experience: {
-        position: "",
-        company: "",
-        place: "",
-        from: "",
-        to: "",
-        id: uniqid(),
-      },
+        experiences: [],
+        experience: {
+          position: "",
+          company: "",
+          place: "",
+          from: "",
+          to: "",
+          id: uniqid(),
+        },
 
-      educations: [],
-      education: {
-        school: "",
-        place: "",
-        subject: "",
-        from: "",
-        to: "",
-        id: uniqid(),
-      },
+        educations: [],
+        education: {
+          school: "",
+          place: "",
+          subject: "",
+          from: "",
+          to: "",
+          id: uniqid(),
+        },
 
-      knowledges: [],
-      knowledge: {
-        skill: "",
-        id: uniqid(),
-      },
-    };
+        knowledges: [],
+        knowledge: {
+          skill: "",
+          id: uniqid(),
+        },
+      };
+    }
   }
 
   // Handle changes in input fields
