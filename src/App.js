@@ -1,479 +1,407 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import uniqid from "uniqid";
 import ReactToPrint from "react-to-print";
 import Preview from "./components/Preview";
-import exampleCV from "./exampleCV";
 
-class App extends Component {
-  constructor() {
-    super();
+export default function App() {
+  const [personalInformation, setPersonalInformation] = useState({
+    name: "",
+    title: "",
+    email: "",
+    phoneNumber: "",
+    address: "",
+    aboutMe: "",
+    image: "",
+  });
 
-    if (window.location.href.split("?")[1] === "preview=example") {
-      this.state = exampleCV;
-    } else {
-      this.state = {
-        personalInformation: {
-          name: "",
-          title: "",
-          email: "",
-          phoneNumber: "",
-          address: "",
-          aboutMe: "",
-          image: "",
-        },
+  const [experiences, setExperiences] = useState([]);
+  const [experience, setExperience] = useState({
+    position: "",
+    company: "",
+    place: "",
+    from: "",
+    to: "",
+    id: uniqid(),
+  });
 
-        experiences: [],
-        experience: {
-          position: "",
-          company: "",
-          place: "",
-          from: "",
-          to: "",
-          id: uniqid(),
-        },
+  const [educations, setEducations] = useState([]);
+  const [education, setEducation] = useState({
+    school: "",
+    place: "",
+    subject: "",
+    from: "",
+    to: "",
+    id: uniqid(),
+  });
 
-        educations: [],
-        education: {
-          school: "",
-          place: "",
-          subject: "",
-          from: "",
-          to: "",
-          id: uniqid(),
-        },
+  const [knowledges, setKnowledges] = useState([]);
+  const [knowledge, setKnowledge] = useState({
+    skill: "",
+    id: uniqid(),
+  });
 
-        knowledges: [],
-        knowledge: {
-          skill: "",
-          id: uniqid(),
-        },
-      };
-    }
-  }
+  const information = {
+    experiences,
+    experience,
+    educations,
+    education,
+    knowledges,
+    knowledge,
+  };
 
   // Handle changes in input fields
-  handleChangeName(e) {
-    this.setState({
-      ...this.state,
-      personalInformation: {
-        ...this.state.personalInformation,
-        name: e.target.value,
-      },
+  function handleChangeName(e) {
+    setPersonalInformation({
+      ...personalInformation,
+      name: e.target.value,
     });
   }
 
-  handleChangeTitle(e) {
-    this.setState({
-      ...this.state,
-      personalInformation: {
-        ...this.state.personalInformation,
-        title: e.target.value,
-      },
+  function handleChangeTitle(e) {
+    setPersonalInformation({
+      ...personalInformation,
+      title: e.target.value,
     });
   }
 
-  handleChangeEmail(e) {
-    this.setState({
-      ...this.state,
-      personalInformation: {
-        ...this.state.personalInformation,
-        email: e.target.value,
-      },
+  function handleChangeEmail(e) {
+    setPersonalInformation({
+      ...personalInformation,
+      email: e.target.value,
     });
   }
 
-  handleChangePhoneNumber(e) {
-    this.setState({
-      ...this.state,
-      personalInformation: {
-        ...this.state.personalInformation,
-        phoneNumber: e.target.value,
-      },
+  function handleChangePhoneNumber(e) {
+    setPersonalInformation({
+      ...personalInformation,
+      phoneNumber: e.target.value,
     });
   }
 
-  handleChangeAddress(e) {
-    this.setState({
-      ...this.state,
-      personalInformation: {
-        ...this.state.personalInformation,
-        address: e.target.value,
-      },
+  function handleChangeAddress(e) {
+    setPersonalInformation({
+      ...personalInformation,
+      address: e.target.value,
     });
   }
 
-  handleChangeAboutMe(e) {
-    this.setState({
-      ...this.state,
-      personalInformation: {
-        ...this.state.personalInformation,
-        aboutMe: e.target.value,
-      },
+  function handleChangeAboutMe(e) {
+    setPersonalInformation({
+      ...personalInformation,
+      aboutMe: e.target.value,
     });
   }
 
-  handleChangeImage(e) {
-    console.log(e);
-    this.setState({
-      ...this.state,
-      personalInformation: {
-        ...this.state.personalInformation,
-        image: URL.createObjectURL(e.target.files[0]),
-      },
+  function handleChangeImage(e) {
+    setPersonalInformation({
+      ...personalInformation,
+      image: URL.createObjectURL(e.target.files[0]),
     });
   }
 
   // Handle changes in experience input fields
-  handleExperienceChangePosition(e) {
-    this.setState({
-      ...this.state,
-      experience: {
-        ...this.state.experience,
-        position: e.target.value,
-      },
+  function handleExperienceChangePosition(e) {
+    setExperience({
+      ...experience,
+      position: e.target.value,
     });
   }
 
-  handleExperienceChangeCompany(e) {
-    this.setState({
-      ...this.state,
-      experience: {
-        ...this.state.experience,
-        company: e.target.value,
-      },
+  function handleExperienceChangeCompany(e) {
+    setExperience({
+      ...experience,
+      company: e.target.value,
     });
   }
 
-  handleExperienceChangePlace(e) {
-    this.setState({
-      ...this.state,
-      experience: {
-        ...this.state.experience,
-        place: e.target.value,
-      },
+  function handleExperienceChangePlace(e) {
+    setExperience({
+      ...experience,
+      place: e.target.value,
     });
   }
 
-  handleExperienceChangeFrom(e) {
-    this.setState({
-      ...this.state,
-      experience: {
-        ...this.state.experience,
-        from: e.target.value,
-      },
+  function handleExperienceChangeFrom(e) {
+    setExperience({
+      ...experience,
+      from: e.target.value,
     });
   }
 
-  handleExperienceChangeTo(e) {
-    this.setState({
-      ...this.state,
-      experience: {
-        ...this.state.experience,
-        to: e.target.value,
-      },
+  function handleExperienceChangeTo(e) {
+    setExperience({
+      ...experience,
+      to: e.target.value,
     });
   }
 
   // Handle changes in education input fields
-  handleEducationChangeSchool(e) {
-    this.setState({
-      ...this.state,
-      education: {
-        ...this.state.education,
-        school: e.target.value,
-      },
+  function handleEducationChangeSchool(e) {
+    setEducation({
+      ...education,
+      school: e.target.value,
     });
   }
 
-  handleEducationChangePlace(e) {
-    this.setState({
-      ...this.state,
-      education: {
-        ...this.state.education,
-        place: e.target.value,
-      },
+  function handleEducationChangePlace(e) {
+    setEducation({
+      ...education,
+      place: e.target.value,
     });
   }
 
-  handleEducationChangeSubject(e) {
-    this.setState({
-      ...this.state,
-      education: {
-        ...this.state.education,
-        subject: e.target.value,
-      },
+  function handleEducationChangeSubject(e) {
+    setEducation({
+      ...education,
+      subject: e.target.value,
     });
   }
 
-  handleEducationChangeFrom(e) {
-    this.setState({
-      ...this.state,
-      education: {
-        ...this.state.education,
-        from: e.target.value,
-      },
+  function handleEducationChangeFrom(e) {
+    setEducation({
+      ...education,
+      from: e.target.value,
     });
   }
 
-  handleEducationChangeTo(e) {
-    this.setState({
-      ...this.state,
-      education: {
-        ...this.state.education,
-        to: e.target.value,
-      },
+  function handleEducationChangeTo(e) {
+    setEducation({
+      ...education,
+      to: e.target.value,
     });
   }
 
   // Handle changes in knowledge input field
-  handleKnowledgeChangeSkill(e) {
-    this.setState({
-      ...this.state,
-      knowledge: {
-        ...this.state.knowledge,
-        skill: e.target.value,
-      },
+  function handleKnowledgeChangeSkill(e) {
+    setKnowledge({
+      ...knowledge,
+      skill: e.target.value,
     });
   }
 
   // Submit
-  handleSubmitExperience(e) {
+  function handleSubmitExperience(e) {
     e.preventDefault();
-    this.setState({
-      ...this.state,
-      experiences: this.state.experiences.concat(this.state.experience),
-      experience: {
-        position: "",
-        company: "",
-        place: "",
-        from: "",
-        to: "",
-        id: uniqid(),
-      },
-    });
-    console.log(this.state);
-  }
-
-  handleSubmitEducation(e) {
-    e.preventDefault();
-    this.setState({
-      ...this.state,
-      educations: this.state.educations.concat(this.state.education),
-      education: {
-        school: "",
-        place: "",
-        subject: "",
-        from: "",
-        to: "",
-        id: uniqid(),
-      },
+    setExperiences(experiences.concat(experience));
+    setExperience({
+      position: "",
+      company: "",
+      place: "",
+      from: "",
+      to: "",
+      id: uniqid(),
     });
   }
 
-  handleSubmitKnowledge(e) {
+  function handleSubmitEducation(e) {
     e.preventDefault();
-    this.setState({
-      ...this.state,
-      knowledges: this.state.knowledges.concat(this.state.knowledge),
-      knowledge: {
-        skill: "",
-        id: uniqid(),
-      },
+    setEducations(educations.concat(education));
+    setEducation({
+      school: "",
+      place: "",
+      subject: "",
+      from: "",
+      to: "",
+      id: uniqid(),
     });
   }
 
-  render() {
-    const { experience, education, knowledge } = this.state;
-    const { name, title, email, phoneNumber, address, aboutMe } =
-      this.state.personalInformation;
-    return (
-      <>
-        <div className="flex-container-column">
-          <h1 className="logo">Forhåndsvisning</h1>
-          <div className="flex-container-row">
-            <Preview
-              information={this.state}
-              ref={(el) => (this.componentRef = el)}
-            />
+  function handleSubmitKnowledge(e) {
+    e.preventDefault();
+    setKnowledges(knowledges.concat(knowledge));
+    setKnowledge({
+      skill: "",
+      id: uniqid(),
+    });
+  }
 
-            <div className="form">
-              <div className="personal-information">
-                <h2>Generell Informasjon</h2>
-                {/* Fullt navn */}
-                <input
-                  value={name}
-                  placeholder="Fullt navn"
-                  type="text"
-                  onChange={(e) => this.handleChangeName(e)}
-                />
+  const { name, title, email, phoneNumber, address, aboutMe } =
+    personalInformation;
+  return (
+    <>
+      <div className="flex-container-column">
+        <h1 className="logo">Forhåndsvisning</h1>
+        <div className="flex-container-row">
+          <Preview
+            personalInformation={personalInformation}
+            information={information}
+          />
 
-                {/* Tittel */}
-                <input
-                  value={title}
-                  placeholder="Tittel"
-                  type="text"
-                  onChange={(e) => this.handleChangeTitle(e)}
-                />
+          <div className="form">
+            <div className="personal-information">
+              <h2>Generell Informasjon</h2>
+              {/* Fullt navn */}
+              <input
+                value={name}
+                placeholder="Fullt navn"
+                type="text"
+                onChange={(e) => handleChangeName(e)}
+              />
 
-                {/* E-post */}
-                <input
-                  value={email}
-                  placeholder="E-post"
-                  type="email"
-                  onChange={(e) => this.handleChangeEmail(e)}
-                />
+              {/* Tittel */}
+              <input
+                value={title}
+                placeholder="Tittel"
+                type="text"
+                onChange={(e) => handleChangeTitle(e)}
+              />
 
-                {/* Telefonnummer */}
-                <input
-                  value={phoneNumber}
-                  placeholder="Telefonnummer"
-                  type="text"
-                  onChange={(e) => this.handleChangePhoneNumber(e)}
-                />
+              {/* E-post */}
+              <input
+                value={email}
+                placeholder="E-post"
+                type="email"
+                onChange={(e) => handleChangeEmail(e)}
+              />
 
-                {/* Adresse */}
-                <input
-                  value={address}
-                  placeholder="Adresse"
-                  type="text"
-                  onChange={(e) => this.handleChangeAddress(e)}
-                />
+              {/* Telefonnummer */}
+              <input
+                value={phoneNumber}
+                placeholder="Telefonnummer"
+                type="text"
+                onChange={(e) => handleChangePhoneNumber(e)}
+              />
 
-                {/* Om meg */}
-                <input
-                  value={aboutMe}
-                  placeholder="Om meg"
-                  type="text"
-                  onChange={(e) => this.handleChangeAboutMe(e)}
-                />
+              {/* Adresse */}
+              <input
+                value={address}
+                placeholder="Adresse"
+                type="text"
+                onChange={(e) => handleChangeAddress(e)}
+              />
 
-                <label htmlFor="image-upload" className="button">
-                  Legg til bilde
-                </label>
-                <input
-                  id="image-upload"
-                  type="file"
-                  accept="image"
-                  onChange={(e) => this.handleChangeImage(e)}
-                />
-              </div>
+              {/* Om meg */}
+              <input
+                value={aboutMe}
+                placeholder="Om meg"
+                type="text"
+                onChange={(e) => handleChangeAboutMe(e)}
+              />
 
-              <form
-                className="knowledge"
-                onSubmit={(e) => this.handleSubmitKnowledge(e)}
-              >
-                <h2>Ferdigheter</h2>
-                <input
-                  value={knowledge.skill}
-                  placeholder="Ferdighet"
-                  type="text"
-                  onChange={(e) => this.handleKnowledgeChangeSkill(e)}
-                />
-                <button type="submit">Legg til ferdighet</button>
-              </form>
-
-              <form
-                className="experience"
-                onSubmit={(e) => this.handleSubmitExperience(e)}
-              >
-                <h2>Jobberfaring</h2>
-                <input
-                  value={experience.position}
-                  placeholder="Stilling"
-                  type="text"
-                  onChange={(e) => this.handleExperienceChangePosition(e)}
-                />
-
-                <input
-                  value={experience.company}
-                  placeholder="Selskap"
-                  type="text"
-                  onChange={(e) => this.handleExperienceChangeCompany(e)}
-                />
-
-                <input
-                  value={experience.place}
-                  placeholder="Sted"
-                  type="text"
-                  onChange={(e) => this.handleExperienceChangePlace(e)}
-                />
-
-                <input
-                  value={experience.from}
-                  placeholder="Fra"
-                  type="text"
-                  onChange={(e) => this.handleExperienceChangeFrom(e)}
-                />
-
-                <input
-                  value={experience.to}
-                  placeholder="Til"
-                  type="text"
-                  onChange={(e) => this.handleExperienceChangeTo(e)}
-                />
-
-                <button type="submit">Legg til jobberfaring</button>
-              </form>
-
-              <form
-                className="education"
-                onSubmit={(e) => this.handleSubmitEducation(e)}
-              >
-                <h2>Utdannelse</h2>
-                <input
-                  value={education.subject}
-                  placeholder="Fag"
-                  type="text"
-                  onChange={(e) => this.handleEducationChangeSubject(e)}
-                />
-
-                <input
-                  value={education.school}
-                  placeholder="Skole"
-                  type="text"
-                  onChange={(e) => this.handleEducationChangeSchool(e)}
-                />
-
-                <input
-                  value={education.place}
-                  placeholder="Sted"
-                  type="text"
-                  onChange={(e) => this.handleEducationChangePlace(e)}
-                />
-
-                <input
-                  value={education.from}
-                  placeholder="Fra"
-                  type="text"
-                  onChange={(e) => this.handleEducationChangeFrom(e)}
-                />
-
-                <input
-                  value={education.to}
-                  placeholder="Til"
-                  type="text"
-                  onChange={(e) => this.handleEducationChangeTo(e)}
-                />
-
-                <button type="submit">Legg til utdannelse</button>
-              </form>
-
-              <ReactToPrint
-                trigger={() => {
-                  return (
-                    <a href="#" className="button">
-                      Lagre CV som PDF / Skriv ut CV
-                    </a>
-                  );
-                }}
-                content={() => this.componentRef}
+              <label htmlFor="image-upload" className="button">
+                Legg til bilde
+              </label>
+              <input
+                id="image-upload"
+                type="file"
+                accept="image"
+                onChange={(e) => handleChangeImage(e)}
               />
             </div>
+
+            <form
+              className="knowledge"
+              onSubmit={(e) => handleSubmitKnowledge(e)}
+            >
+              <h2>Ferdigheter</h2>
+              <input
+                value={knowledge.skill}
+                placeholder="Ferdighet"
+                type="text"
+                onChange={(e) => handleKnowledgeChangeSkill(e)}
+              />
+              <button type="submit">Legg til ferdighet</button>
+            </form>
+
+            <form
+              className="experience"
+              onSubmit={(e) => handleSubmitExperience(e)}
+            >
+              <h2>Jobberfaring</h2>
+              <input
+                value={experience.position}
+                placeholder="Stilling"
+                type="text"
+                onChange={(e) => handleExperienceChangePosition(e)}
+              />
+
+              <input
+                value={experience.company}
+                placeholder="Selskap"
+                type="text"
+                onChange={(e) => handleExperienceChangeCompany(e)}
+              />
+
+              <input
+                value={experience.place}
+                placeholder="Sted"
+                type="text"
+                onChange={(e) => handleExperienceChangePlace(e)}
+              />
+
+              <input
+                value={experience.from}
+                placeholder="Fra"
+                type="text"
+                onChange={(e) => handleExperienceChangeFrom(e)}
+              />
+
+              <input
+                value={experience.to}
+                placeholder="Til"
+                type="text"
+                onChange={(e) => handleExperienceChangeTo(e)}
+              />
+
+              <button type="submit">Legg til jobberfaring</button>
+            </form>
+
+            <form
+              className="education"
+              onSubmit={(e) => handleSubmitEducation(e)}
+            >
+              <h2>Utdannelse</h2>
+              <input
+                value={education.subject}
+                placeholder="Fag"
+                type="text"
+                onChange={(e) => handleEducationChangeSubject(e)}
+              />
+
+              <input
+                value={education.school}
+                placeholder="Skole"
+                type="text"
+                onChange={(e) => handleEducationChangeSchool(e)}
+              />
+
+              <input
+                value={education.place}
+                placeholder="Sted"
+                type="text"
+                onChange={(e) => handleEducationChangePlace(e)}
+              />
+
+              <input
+                value={education.from}
+                placeholder="Fra"
+                type="text"
+                onChange={(e) => handleEducationChangeFrom(e)}
+              />
+
+              <input
+                value={education.to}
+                placeholder="Til"
+                type="text"
+                onChange={(e) => handleEducationChangeTo(e)}
+              />
+
+              <button type="submit">Legg til utdannelse</button>
+            </form>
+
+            <ReactToPrint
+              trigger={() => {
+                return (
+                  <a href="#" className="button">
+                    Lagre CV som PDF / Skriv ut CV
+                  </a>
+                );
+              }}
+              content={() => this.componentRef}
+            />
           </div>
         </div>
-      </>
-    );
-  }
+      </div>
+    </>
+  );
 }
-
-export default App;
