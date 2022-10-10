@@ -1,4 +1,4 @@
-import "../styles/preview.css";
+import "./preview.css";
 
 export default function Preview(props) {
   const { name, title, email, phoneNumber, address, aboutMe, image } =
@@ -26,30 +26,30 @@ export default function Preview(props) {
           <div className="contact">
             {(email || phoneNumber || address) && (
               <>
-                <h2>Kontakt</h2>
+                <h2>Contact</h2>
                 <hr />
               </>
             )}
 
-            {image && <img src={image} alt="Profilbilde" />}
+            {image && <img src={image} alt="Profile image" />}
 
             {email && (
               <>
-                <h3>E-post</h3>
+                <h3>Email</h3>
                 <p>{email}</p>
               </>
             )}
 
             {phoneNumber && (
               <>
-                <h3>Telefon</h3>
+                <h3>Telephone</h3>
                 <p>{phoneNumber}</p>
               </>
             )}
 
             {address && (
               <>
-                <h3>Adresse</h3>
+                <h3>Address</h3>
                 <p>{address}</p>
               </>
             )}
@@ -59,7 +59,7 @@ export default function Preview(props) {
         <div className="resume">
           {aboutMe && (
             <div className="about">
-              <h2>Om meg</h2>
+              <h2>About</h2>
               <hr />
 
               <p>{aboutMe}</p>
@@ -73,7 +73,7 @@ export default function Preview(props) {
             experience.company ||
             experience.place) && (
             <div className="experiences">
-              <h2>Jobberfaring</h2>
+              <h2>Work Experience</h2>
               <hr />
 
               <div className="resume-list">
@@ -130,7 +130,7 @@ export default function Preview(props) {
             education.place ||
             education.subject) && (
             <div className="educations">
-              <h2>Utdannelse</h2>
+              <h2>Education</h2>
               <hr />
 
               <div className="resume-list">
@@ -150,7 +150,7 @@ export default function Preview(props) {
                           {education.place}
                         </h3>
                         <p>
-                          {education.subject && <span>Fag: </span>}{" "}
+                          {education.subject && <span>Subject: </span>}{" "}
                           {education.subject}
                         </p>
                       </div>
@@ -176,7 +176,7 @@ export default function Preview(props) {
                         {education.place}
                       </h3>
                       <p>
-                        {education.subject && <span>Fag: </span>}{" "}
+                        {education.subject && <span>Subject: </span>}{" "}
                         {education.subject}
                       </p>
                     </div>
@@ -188,7 +188,7 @@ export default function Preview(props) {
 
           {(knowledges.length > 0 || knowledge.skill) && (
             <div className="knowledges">
-              <h2>Ferdigheter</h2>
+              <h2>Skills</h2>
               <hr />
 
               <div className="knowledges-tag-container">
