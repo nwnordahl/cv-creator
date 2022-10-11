@@ -1,8 +1,8 @@
 import "./preview.css";
 
-export default function Preview(props) {
+export default function Preview({ personalInformation, information }) {
   const { name, title, email, phoneNumber, address, aboutMe, image } =
-    props.personalInformation;
+    personalInformation;
   const {
     experiences,
     experience,
@@ -10,7 +10,7 @@ export default function Preview(props) {
     education,
     knowledges,
     knowledge,
-  } = props.information;
+  } = information;
 
   return (
     <div className="preview">

@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import uniqid from "uniqid";
-import ReactToPrint from "react-to-print";
-import Preview from "./components/Preview";
-
-import GeneralInformation from "./GeneralInformation";
-import Skills from "./Skills";
-import Experience from "./Experience";
-import Education from "./Education";
+import Preview from "./components/preview/Preview";
+import Form from "./components/form/Form";
 
 export default function App() {
   const [personalInformation, setPersonalInformation] = useState({
@@ -46,12 +41,20 @@ export default function App() {
   });
 
   const information = {
+    personalInformation,
+    setPersonalInformation,
     experiences,
+    setExperiences,
     experience,
+    setExperience,
     educations,
+    setEducations,
     education,
+    setEducation,
     knowledges,
+    setKnowledges,
     knowledge,
+    setKnowledge,
   };
 
   return (
@@ -63,44 +66,7 @@ export default function App() {
           information={information}
         />
 
-        <div className="form">
-          <GeneralInformation
-            personalInformation={personalInformation}
-            setPersonalInformation={setPersonalInformation}
-          />
-
-          <Skills
-            knowledge={knowledge}
-            setKnowledge={setKnowledge}
-            knowledges={knowledges}
-            setKnowledges={setKnowledges}
-          />
-
-          <Experience
-            experience={experience}
-            setExperience={setExperience}
-            experiences={experiences}
-            setExperiences={setExperiences}
-          />
-
-          <Education
-            education={education}
-            setEducation={setEducation}
-            educations={educations}
-            setEducations={setEducations}
-          />
-
-          <ReactToPrint
-            trigger={() => {
-              return (
-                <a href="#" className="button">
-                  Save CV as PDF / Print CV
-                </a>
-              );
-            }}
-            content={() => this.componentRef}
-          />
-        </div>
+        <Form information={information} />
       </div>
     </div>
   );
