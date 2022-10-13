@@ -3,6 +3,7 @@ import Skills from "./Skills";
 import Experience from "./Experience";
 import Education from "./Education";
 import ReactToPrint from "react-to-print";
+import styles from "./Form.module.css";
 
 export default function Form({ information }) {
   const {
@@ -23,7 +24,7 @@ export default function Form({ information }) {
   } = information;
 
   return (
-    <div className="form">
+    <div className={styles.form}>
       <GeneralInformation
         personalInformation={personalInformation}
         setPersonalInformation={setPersonalInformation}
@@ -53,7 +54,7 @@ export default function Form({ information }) {
       <ReactToPrint
         trigger={() => {
           return (
-            <a href="#" className="button">
+            <a href="#" className={styles.button}>
               Save CV as PDF / Print CV
             </a>
           );

@@ -1,4 +1,5 @@
 import uniqid from "uniqid";
+import styles from "./Education.module.css";
 
 export default function Education({
   education,
@@ -56,9 +57,13 @@ export default function Education({
   }
 
   return (
-    <form className="education" onSubmit={(e) => handleSubmitEducation(e)}>
-      <h2>Education</h2>
+    <form
+      className={styles.education}
+      onSubmit={(e) => handleSubmitEducation(e)}
+    >
+      <h2 className={styles.h2}>Education</h2>
       <input
+        className={styles.input}
         value={education.subject}
         placeholder="Subject"
         type="text"
@@ -66,6 +71,7 @@ export default function Education({
       />
 
       <input
+        className={styles.input}
         value={education.school}
         placeholder="School"
         type="text"
@@ -73,6 +79,7 @@ export default function Education({
       />
 
       <input
+        className={styles.input}
         value={education.place}
         placeholder="Place"
         type="text"
@@ -80,6 +87,7 @@ export default function Education({
       />
 
       <input
+        className={styles.input}
         value={education.from}
         placeholder="From"
         type="text"
@@ -87,13 +95,16 @@ export default function Education({
       />
 
       <input
+        className={styles.input}
         value={education.to}
         placeholder="To"
         type="text"
         onChange={(e) => handleEducationChangeTo(e)}
       />
 
-      <button type="submit">Add education</button>
+      <button className={styles.button} type="submit">
+        Add education
+      </button>
     </form>
   );
 }

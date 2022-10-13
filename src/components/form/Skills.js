@@ -1,4 +1,5 @@
 import uniqid from "uniqid";
+import styles from "./Skills.module.css";
 
 export default function Skills({
   knowledge,
@@ -24,15 +25,18 @@ export default function Skills({
   }
 
   return (
-    <form className="knowledge" onSubmit={(e) => handleSubmitKnowledge(e)}>
-      <h2>Skills</h2>
+    <form className={styles.skills} onSubmit={(e) => handleSubmitKnowledge(e)}>
+      <h2 className={styles.h2}>Skills</h2>
       <input
+        className={styles.input}
         value={knowledge.skill}
         placeholder="Skill"
         type="text"
         onChange={(e) => handleKnowledgeChangeSkill(e)}
       />
-      <button type="submit">Add skill</button>
+      <button className={styles.button} type="submit">
+        Add skill
+      </button>
     </form>
   );
 }

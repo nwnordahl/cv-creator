@@ -1,3 +1,5 @@
+import styles from "./GeneralInformation.module.css";
+
 export default function GeneralInformation({
   personalInformation,
   setPersonalInformation,
@@ -54,9 +56,10 @@ export default function GeneralInformation({
   const { name, title, email, phoneNumber, address, aboutMe } =
     personalInformation;
   return (
-    <div className="personal-information">
-      <h2>General Information</h2>
+    <div className={styles.personalInformation}>
+      <h2 className={styles.h2}>General Information</h2>
       <input
+        className={styles.input}
         value={name}
         placeholder="Full name"
         type="text"
@@ -64,6 +67,7 @@ export default function GeneralInformation({
       />
 
       <input
+        className={styles.input}
         value={title}
         placeholder="Title"
         type="text"
@@ -71,6 +75,7 @@ export default function GeneralInformation({
       />
 
       <input
+        className={styles.input}
         value={email}
         placeholder="Email"
         type="email"
@@ -78,6 +83,7 @@ export default function GeneralInformation({
       />
 
       <input
+        className={styles.input}
         value={phoneNumber}
         placeholder="Phone number"
         type="text"
@@ -85,6 +91,7 @@ export default function GeneralInformation({
       />
 
       <input
+        className={styles.input}
         value={address}
         placeholder="Address"
         type="text"
@@ -92,13 +99,14 @@ export default function GeneralInformation({
       />
 
       <input
+        className={styles.input}
         value={aboutMe}
         placeholder="About me"
         type="text"
         onChange={(e) => handleChangeAboutMe(e)}
       />
 
-      <label htmlFor="image-upload" className="button">
+      <label htmlFor="image-upload" className={styles.button}>
         Add image
       </label>
       <input

@@ -1,4 +1,5 @@
 import uniqid from "uniqid";
+import styles from "./Experience.module.css";
 
 export default function Experience({
   experience,
@@ -56,9 +57,13 @@ export default function Experience({
   }
 
   return (
-    <form className="experience" onSubmit={(e) => handleSubmitExperience(e)}>
-      <h2>Work Experience</h2>
+    <form
+      className={styles.experience}
+      onSubmit={(e) => handleSubmitExperience(e)}
+    >
+      <h2 className={styles.h2}>Work Experience</h2>
       <input
+        className={styles.input}
         value={experience.position}
         placeholder="Position"
         type="text"
@@ -66,6 +71,7 @@ export default function Experience({
       />
 
       <input
+        className={styles.input}
         value={experience.company}
         placeholder="Company"
         type="text"
@@ -73,6 +79,7 @@ export default function Experience({
       />
 
       <input
+        className={styles.input}
         value={experience.place}
         placeholder="Place"
         type="text"
@@ -80,6 +87,7 @@ export default function Experience({
       />
 
       <input
+        className={styles.input}
         value={experience.from}
         placeholder="From"
         type="text"
@@ -87,13 +95,16 @@ export default function Experience({
       />
 
       <input
+        className={styles.input}
         value={experience.to}
         placeholder="To"
         type="text"
         onChange={(e) => handleExperienceChangeTo(e)}
       />
 
-      <button type="submit">Add work experience</button>
+      <button className={styles.button} type="submit">
+        Add work experience
+      </button>
     </form>
   );
 }

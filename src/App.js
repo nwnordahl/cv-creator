@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import uniqid from "uniqid";
 import Preview from "./components/preview/Preview";
 import Form from "./components/form/Form";
+import styles from "./App.module.css";
 
 export default function App() {
   const [personalInformation, setPersonalInformation] = useState({
@@ -58,9 +59,9 @@ export default function App() {
   };
 
   return (
-    <div className="flex-container-column">
+    <div className={styles.flexContainerColumn}>
       <h1 className="logo">Preview</h1>
-      <div className="flex-container-row">
+      <div className={styles.flexContainerRow}>
         <Preview
           personalInformation={personalInformation}
           information={information}

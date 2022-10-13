@@ -1,0 +1,28 @@
+.form {
+  max-width: 700px;
+  border-radius: 8px;
+  padding: 20px 25px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px 0px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button {
+  border: 0;
+  padding: 10px 30px;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  background-color: #6abfc3 !important;
+  border-radius: 8px;
+  box-shadow: 0 0.05em 0.25em 0 rgb(0 0 0 / 50%);
+}
+
+.button:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
